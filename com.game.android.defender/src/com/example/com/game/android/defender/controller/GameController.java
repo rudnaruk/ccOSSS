@@ -100,7 +100,10 @@ public class GameController extends BaseController implements OnDragListener ,On
 	}
 
 	private boolean processDrop(DragEvent event, View v) {
-		int nX = (int)(event.getX()-TW/2);
+		 if(!map.isAvailableSpace(event)){
+			 return false;
+		 }
+		 int nX = (int)(event.getX()-TW/2);
 		 int nY = (int)(event.getY()-TH/2);
 		 int limitY=0;
 		 if(nX<0){
