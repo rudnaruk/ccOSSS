@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/map1"
+    android:orientation="vertical" >
+
+    <com.example.com.game.android.defender.view.MyAbsoluteLayout
+        android:id="@+id/myabsolutelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+    </com.example.com.game.android.defender.view.MyAbsoluteLayout>
+
+    <com.example.com.game.android.defender.util.Map
+        android:id="@+id/map1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/temp1_nonroot_inact" >
+
+        <com.example.com.game.android.defender.view.DragableImageView
+            android:id="@+id/DragableImageView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/activity_vertical_margin"
+            android:src="@drawable/tw1" />
+
+        <com.example.com.game.android.defender.view.DragableImageView
+            android:id="@+id/DragableImageView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/activity_vertical_margin"
+            android:src="@drawable/tw2" />
+
+        <com.example.com.game.android.defender.view.DragableImageView
+            android:id="@+id/dragableImageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/activity_vertical_margin"
+            android:src="@drawable/tw3" />
+    </LinearLayout>
+
+</FrameLayout>

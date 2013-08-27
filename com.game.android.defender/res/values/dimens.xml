@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="menu_button_width">220dp</dimen>
+    <dimen name="map_unit">40px</dimen>
+    <dimen name="tower_unit_width">40px</dimen>
+    <dimen name="tower_unit_height">80px</dimen>
+
+</resources>

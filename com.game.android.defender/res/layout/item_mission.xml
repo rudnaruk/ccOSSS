@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c9c9c9" >
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginRight="1dp"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/item_image1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageButton
+            android:id="@+id/item_locker1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/bgdialog"
+            android:scaleType="center"
+            android:src="@drawable/lock" />
+
+        <TextView
+            android:id="@+id/item_title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:background="@drawable/bg_button"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="Title Title...."
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_score1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/bg_score_text"
+            android:text="Score : 100"
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:background="#000"
+        android:layout_marginLeft="1dp"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/item_image2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageButton
+            android:id="@+id/item_locker2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/bgdialog"
+            android:scaleType="center"
+            android:src="@drawable/lock" />
+
+        <TextView
+            android:id="@+id/item_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:background="@drawable/bg_button"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="Title Title...."
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_score2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/bg_score_text"
+            android:text="Score : 100"
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</LinearLayout>
