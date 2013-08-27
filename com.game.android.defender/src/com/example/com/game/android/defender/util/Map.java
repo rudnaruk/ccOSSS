@@ -88,11 +88,20 @@ public class Map extends View{
 		mSelect.bottom = 0;
 		mSelect.top = 0;
 		mSelect.left = 0;
+		invalidate();
+	}
+	public boolean isAvailableSpace(DragEvent event){
+		int nX = (int)(event.getX());
+		int nY = (int)(event.getY()+h/4);
+		if((nX/w)>1 && (nX/w)<((screenWidth/w) -2) && (nY/h)>1 && (nY/h)<((screenHeight/h)-2)){
+			return true;
+		}
+		return false;
 	}
 	public Rect getmSelect() {
 		return mSelect;
 	}
-
+	
 	public void findLocation(DragEvent event, View v) {
 		int nX = (int)(event.getX());
 		int nY = (int)(event.getY()+h/4);
@@ -100,6 +109,11 @@ public class Map extends View{
 		mSelect.top = (int) (h*(nY/h));
 		mSelect.right = (int) (mSelect.left+w);
 		mSelect.bottom = (int) (mSelect.top+h);
+		if(isAvailableSpace(event)){
+			mPaintSelect.setColor(Color.argb(170, 20, 255, 20));
+		}else{
+			mPaintSelect.setColor(Color.argb(170, 255, 20, 20));
+		}
 		invalidate();
 	}
 
