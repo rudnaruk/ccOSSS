@@ -1,5 +1,6 @@
 package com.example.com.game.android.defender.controller;
 
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.graphics.Color;
@@ -9,8 +10,12 @@ import android.view.DragEvent;
 import android.view.View;
 import android.view.View.OnDragListener;
 import android.view.View.OnLongClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.android.example.pathanimation.AnimatorPath;
+import com.android.example.pathanimation.PathEvaluator;
+import com.android.example.pathanimation.PathPoint;
 import com.example.com.game.android.defender.R;
 import com.example.com.game.android.defender.core.BaseActivity;
 import com.example.com.game.android.defender.core.BaseController;
@@ -31,6 +36,7 @@ public class GameController extends BaseController implements OnDragListener ,On
 	private Handler mHandler;
 	private float top;
 	private float left;
+	private Button mButton;
 	public GameController(BaseActivity mContext) {
 		super(mContext);
 		// TODO Auto-generated constructor stub
@@ -54,6 +60,31 @@ public class GameController extends BaseController implements OnDragListener ,On
 				updateScreenFactor();
 			}
 		},1000);
+		mButton = (Button) getActivity().findViewById(R.id.delete_me);
+		// Set up the path we're animating along
+		AnimatorPath path = new AnimatorPath();
+		path.moveTo(0, 0);
+		path.lineTo(300, 0);
+		path.lineTo(300, 70);
+		path.lineTo(0, 70);
+		path.lineTo(0, 140);
+		path.lineTo(300, 140);
+		path.lineTo(300, 210);
+		path.lineTo(0, 210);
+		path.curveTo(100, 0, 300, 900, 400, 500);
+
+		// Set up the animation
+		final ObjectAnimator anim = ObjectAnimator.ofObject(this, "buttonLoc",
+		        new PathEvaluator(), path.getPoints().toArray());
+		anim.setDuration(100000);
+
+		mButton.setOnClickListener(new View.OnClickListener() {
+		    @Override
+		    public void onClick(View v) {
+		        Log.d("united", "button clicked");
+		        anim.start();
+		    }
+		});
 	}
 	private void updateScreenFactor(){
 		SCREEN_W = mContentView.getWidth();
@@ -136,5 +167,8 @@ public class GameController extends BaseController implements OnDragListener ,On
 		dragView = a;
 		return true;
 	}
-
+	 public void setButtonLoc(PathPoint newLoc) {
+	        mButton.setTranslationX(newLoc.mX);
+	        mButton.setTranslationY(newLoc.mY);
+	    }
 }
